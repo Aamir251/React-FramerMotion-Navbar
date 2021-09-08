@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+header div {
+  z-index: 5;
+}
+nav {
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  font-family: "Raleway", sans-serif;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.hamburger {
+  width: 2rem;
+  position: fixed;
+  right: 0.5rem;
+  top: 1rem;
+  cursor: pointer;
+}
+path {
+  transition: transform 0.5s ease;
+}
+path:first-child.showNav {
+  transform: rotateZ(45deg);
+  transform-origin: 20% 25%;
+  fill: #fff;
+}
+path:last-child.showNav {
+  transform: rotateZ(-45deg);
+  transform-origin: 0% 70%;
+  fill: #fff;
+}
+li {
+  list-style-type: none;
+  position: relative;
+}
+li::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background-color: #b65611;
+  left: 0;
+  bottom: 0;
+  transition: width 0.5s ease;
+}
+li:hover::after {
+  width: 5rem;
+}
+nav div {
+  height: 100%;
+  width: 100%;
+}
+nav div:first-child {
+  background-color: #0f0d0d;
+}
+nav div:last-child {
+  background-color: #181515;
+}
+nav div li:first-child {
+  margin-top: 0.5rem;
+}
+nav div:first-child .case-studies::before {
+  content: attr(aria-label);
+  font-size: 120%;
+  font-weight: bold;
+  color: #b65611;
+}
+
+nav div {
+  color: #a9a4a4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 30%;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+nav div:first-child li {
+  padding: 0.3rem 0;
+}
+
+nav div:first-child .profiles::before {
+  content: attr(aria-label);
+  font-size: 120%;
+  font-weight: 600;
+  color: #b65611;
+}
+
+nav div:last-child {
+  color: #ece1e1;
+}
+nav div:last-child li {
+  padding: 1rem 0;
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 760px) {
+  nav div {
+    padding-left: 2rem;
+  }
+}
